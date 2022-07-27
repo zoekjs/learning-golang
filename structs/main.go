@@ -27,8 +27,9 @@ func main() {
 	jim.print()
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+func (pointerToPerson *person) updateName(newFirstName string) {
+	// the value of firstName is now updated because we are passing a pointer to person jim
+	(*pointerToPerson).firstName = newFirstName
 }
 
 func (p person) print() {
